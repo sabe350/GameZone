@@ -24,12 +24,12 @@ open class consola(val codigo: String, val marca: String, val modelo: String, va
         return "codigo: $codigo || marca: $marca || modelo: $modelo || usuario: $usuario"
     }
 
-    open fun checkCode(): String {
-        if (codigo. == false) {
-            return "$codigo formato invalido"
-        }
-        return "$codigo"
-    }
+    //open fun checkCode(): String {
+    //    if (codigo. == false) {
+    //        return "$codigo formato invalido"
+    //    }
+    //    return "$codigo"
+    //}
 }
 class consolaClasica(codigo: String, marca: String, modelo: String, usuario: String, val valor: Int = 800): consola(codigo, marca, modelo, usuario){
 
@@ -65,5 +65,5 @@ fun main(){
     println(consola1.descripcion())
     println(consola4.descripcion())
     println(consola5.descripcion())
-    println(consola6.checkCode())
+    // println(consola6.checkCode())
 }
