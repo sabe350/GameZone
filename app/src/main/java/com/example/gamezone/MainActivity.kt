@@ -1,5 +1,4 @@
 package com.example.gamezone
-
 open class consola(val codigo: String, val marca: String, val modelo: String, val usuario: String) {
     open fun descripcion(): String {
         return "codigo: $codigo || marca: $marca || modelo: $modelo || usuario: $usuario"
@@ -13,10 +12,10 @@ class consolaClasica(codigo: String, marca: String, modelo: String, usuario: Str
     }
 
     fun checkCode(): String {
-        if (codigo.startsWith("CC") == false) {
+        if (codigo.startsWith("CC") == false || codigo.length != 6) {
             return "$codigo formato invalido"
         }
-        return "$codigo"
+        return "$codigo formato valido"
     }
 }
 
@@ -26,10 +25,10 @@ class consolaModerna(codigo: String, marca: String, modelo: String, usuario: Str
     }
 
     fun checkCode(): String {
-        if (codigo.startsWith("CM") == false) {
+        if (codigo.startsWith("CM" ) == false || codigo.length != 6) {
             return "$codigo formato invalido"
         }
-        return "$codigo"
+        return "$codigo formato valido"
     }
 }
 
@@ -39,10 +38,10 @@ class consolaVR(codigo: String, marca: String, modelo: String, usuario: String, 
     }
 
     fun checkCode(): String {
-        if (codigo.startsWith("VR") == false) {
+        if (codigo.startsWith("VR") == false || codigo.length != 6) {
             return "$codigo formato invalido"
         }
-        return "$codigo"
+        return "$codigo formato valido"
     }
 }
 
@@ -54,15 +53,20 @@ fun main(){
     val consola1 = consolaClasica("CC12CD", "Sony", "Playstation 5", "socio")
     val consola2 = consolaClasica("CC99ZA", "Microsoft", "Xbox Series X", "infanil")
     val consola3 = consolaModerna("CM22TO", "Nintendo", "Switch", "infantil")
-    var consola4 = consolaVR("VR44RG", "Meta", "Quest 3", "educacional", 3000, premium = true )
-    var consola5 = consolaVR("VR44RG", "HTC", "Vive Pro", "infantil", 3000, premium = true )
+    val consola4 = consolaVR("VR44RG", "Meta", "Quest 3", "educacional", 3000,true )
+    val consola5 = consolaVR("VR44RG", "HTC", "Vive Pro", "infantil", 3000, true )
+
+
     val consola6 = consolaClasica("CC12CD", "Sony", "Playstation 5", "socio")
     val consola7 = consolaModerna("CC12CD", "Sony", "Playstation 5", "socio")
-    var consola8 = consolaVR("VR44RG", "Meta", "Quest 3", "educacional", 3000, premium = true )
+    val consola8 = consolaVR("VR44RGAA", "Meta", "Quest 3", "educacional", 3000, true )
 
     println(consola1.descripcion())
+    println(consola2.descripcion())
+    println(consola3.descripcion())
     println(consola4.descripcion())
     println(consola5.descripcion())
+
     println(consola6.checkCode())
     println(consola7.checkCode())
     println(consola8.checkCode())
