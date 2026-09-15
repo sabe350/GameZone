@@ -12,8 +12,10 @@ class consolaClasica(codigo: String, marca: String, modelo: String, usuario: Str
     }
 
     fun checkCode(): String {
-        if (codigo.startsWith("CC") == false || codigo.length != 6) {
-            return "$codigo formato invalido"
+        if (codigo.startsWith("CC") == false) {
+            return "$codigo formato invalido, debe comenzar con 'CC'"
+        }else if (codigo.length != 6){
+            return "$codigo formato invalido, codigo debe contener 6 caracteres"
         }
         return "$codigo formato valido"
     }
@@ -25,8 +27,10 @@ class consolaModerna(codigo: String, marca: String, modelo: String, usuario: Str
     }
 
     fun checkCode(): String {
-        if (codigo.startsWith("CM" ) == false || codigo.length != 6) {
-            return "$codigo formato invalido"
+        if (codigo.startsWith("CM" ) == false) {
+            return "$codigo formato invalido, debe comenzar con 'CM'"
+        }else if (codigo.length != 6){
+            return "$codigo formato invalido, codigo debe contener 6 caracteres"
         }
         return "$codigo formato valido"
     }
@@ -38,8 +42,10 @@ class consolaVR(codigo: String, marca: String, modelo: String, usuario: String, 
     }
 
     fun checkCode(): String {
-        if (codigo.startsWith("VR") == false || codigo.length != 6) {
-            return "$codigo formato invalido"
+        if (codigo.startsWith("VR") == false) {
+            return "$codigo formato invalido debe comenzar con 'VR'"
+        }else if (codigo.length != 6){
+            return "$codigo formato invalido, codigo debe contener 6 caracteres"
         }
         return "$codigo formato valido"
     }
